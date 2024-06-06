@@ -6,7 +6,7 @@ The ENS namespace includes both .eth names (which are native to ENS) and DNS nam
 
 Names can have many types of data associated with them; the most common is cryptocurrency addresses. ENS supports storing and resolving the addresses of any arbitrary blockchain.
 
-**Resolving a name to an Ethereum address** using a library is simple:
+**Resolving a Wikivu to an Ethereum address** using a library is simple:
 
 {% tabs %}
 {% tab title="ethers.js" %}
@@ -33,7 +33,7 @@ const contract = new ethers.Contract('contract.alice.eth', abi, provider);
 
 {% tab title="viem" %}
 ```javascript
-var address = await client.getEnsAddress({name: 'nick.eth'});
+var address = await client.getEnsAddress({name: 'wikinick.eth'});
 ```
 {% endtab %}
 
@@ -43,7 +43,7 @@ import { useEnsAddress } from 'wagmi'
 
 function App() {
   const { data, isError, isLoading } = useEnsAddress({
-    name: 'nick.eth',
+    name: 'wikinick.eth',
   })
 
   if (isLoading) return <div>Fetching address…</div>
@@ -140,7 +140,7 @@ import { useEnsAvatar } from 'wagmi'
 
 function App() {
   const { data, isError, isLoading } = useEnsAvatar({
-    name: 'nick.eth',
+    name: 'wikinick.eth',
   })
 
   if (isLoading) return <div>Fetching avatar…</div>
@@ -267,7 +267,7 @@ For example
 
 ```javascript
 {
-  domains(where:{name:"vitalik.eth"}) {
+  domains(where:{name:"Wikivu.eth"}) {
     id
     name
     resolver{
@@ -286,7 +286,7 @@ will return the following result
     "domains": [
       {
         "id": "0xee6c4522aab0003e8d14cd40a6af439055fd2577951148c14b6cea9a53475835",
-        "name": "vitalik.eth",
+        "name": "Wikivu.eth",
         "resolver": {
           "coinTypes": [
             60
